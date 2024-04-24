@@ -70,6 +70,10 @@ insert  into `perkuliahan`(`id_perkuliahan`,`nim`,`kode_mk`,`nilai`) values
 (25,'sv_002','svpl_001',98),
 (26,'sv_002','svpl_002',77);
 
+
+SELECT m.*,mk.*, p.nilai FROM perkuliahan p 
+	JOIN mahasiswa m ON p.nim=m.nim 
+	JOIN matakuliah mk ON p.kode_mk=mk.kode_mk;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

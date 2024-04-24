@@ -24,7 +24,6 @@ FOREIGN KEY (nim) REFERENCES mahasiswa(nim),
 FOREIGN KEY (kode_mk) REFERENCES matakuliah(kode_mk)
 );
 
-SELECT p.nim, m.nama, m.alamat, m.tanggal_lahir, mk.kode_mk, mk.nama_mk, mk.sks, p.nilai
-FROM perkuliahan p
-JOIN mahasiswa m ON p.nim=m.nim
-JOIN matakuliah mk ON p.kode_mk=mk.kode_mk;
+SELECT m.*,mk.*, p.nilai FROM perkuliahan p 
+	JOIN mahasiswa m ON p.nim=m.nim 
+	JOIN matakuliah mk ON p.kode_mk=mk.kode_mk;
